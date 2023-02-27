@@ -3,13 +3,13 @@
     </div>
     
     <div class="moviesDiv">
-    <div class="card" style="width: 14rem;"  >
+    <div class="card" style="width: 14rem;"  *ngFor="let item of todayShows[0]" [routerLink]="['/ShowDetails',item.id]">
       <img *ngIf="" class="card-img-top"
       src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png"
       height="" alt="">
-    <img else class="card-img-top" src="https://image.tmdb.org/t/p/original/" alt="">
+    <img else class="card-img-top" src="https://image.tmdb.org/t/p/original/{{item.poster_path}}" alt="">
         <div class="card-body">
-          
+            <h6>{{item.name}}</h6>
         </div>
       </div>
     </div>

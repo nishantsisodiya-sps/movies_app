@@ -4,10 +4,10 @@
     
     <div class="moviesDiv">
 
-        <div class="card" *ngFor="let item of tvShows[0]" style="width: 18rem;" [routerLink]="['/details',item.id]">
+        <div class="card" *ngFor="let item of tvShows[0]" style="width: 18rem;" [routerLink]="['/ShowDetails',item.id]">
           <img else class="card-img-top" src="https://image.tmdb.org/t/p/original/{{item.poster_path}}" alt="">
           <div class="card-body" style="text-align: center;">
-            <h4>{{item.name}}</h4>
+            <h6>{{item.name}}</h6>
           </div>
         </div>
       </div>

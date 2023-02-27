@@ -25,7 +25,6 @@ export class ApiService {
     return this.http.get('https://api.themoviedb.org/3/movie/top_rated?api_key=ec8394f8af9fce4604d5da48e0b3d405&language=en-US')
   }
 
-
   searchMovies(val:any):Observable<any>{
     return this.http.get("https://api.themoviedb.org/3/search/movie?api_key=ec8394f8af9fce4604d5da48e0b3d405&query=" + val)
   }
@@ -36,10 +35,6 @@ export class ApiService {
 
   getVideos(id:any):Observable<any>{
     return this.http.get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=ec8394f8af9fce4604d5da48e0b3d405&language=en-US `)
-  }
-
-  getTVShows():Observable<any>{
-    return this.http.get('https://api.themoviedb.org/3/tv/popular?api_key=ec8394f8af9fce4604d5da48e0b3d405&language=en-US&page=1')
   }
 
 }

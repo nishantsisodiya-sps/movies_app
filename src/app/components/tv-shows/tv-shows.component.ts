@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/shared/api.service';
+import { TvApiService } from 'src/app/shared/tv-api.service';
 
 @Component({
   selector: 'app-tv-shows',
@@ -9,16 +10,17 @@ import { ApiService } from 'src/app/shared/api.service';
 export class TvShowsComponent implements OnInit{
   tvShows : any = []
   
-  constructor(private service : ApiService){}
+  constructor(private service2 : TvApiService){}
   ngOnInit(){
     this.getShows()
   }
 
   getShows(){
-    this.service.getTVShows().subscribe(response =>{
+    this.service2.getTVShows().subscribe(response =>{
       this.tvShows.push(response.results)
-      console.log(this.tvShows);
     })
   }
+
+  
 
 }

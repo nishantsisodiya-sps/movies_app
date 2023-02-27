@@ -1,0 +1,18 @@
+.partyImg{
+    aspect-ratio: 10/6;
+}
+.divofdiv{
+    width: 100%;
+    max-width: 50vh;
+    margin: 2%;
+}
+h5{
+    display: inline;
+}
+h6{
+    color: white;
+}
+.btnShowMore{
+    position: absolute;
+    right: 2%;
+}

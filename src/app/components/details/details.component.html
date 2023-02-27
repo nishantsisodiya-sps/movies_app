@@ -35,14 +35,9 @@
 
   <div class="divs" *ngIf="showmore">
     <div class="divofdiv" style="max-width: 13em;" *ngFor="let item of myVideos[0]">
-      <!-- <video width="180" height="120" controls="true">
+      <video width="180" height="120" controls="true">
         <source src="https://www.youtube.com/watch?v={{item.key}}" type="video/mp4">
-      </video> -->
-
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/{{item.key}}" frameborder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture">
-      </iframe>
-
+      </video>
     </div>
   </div>
 

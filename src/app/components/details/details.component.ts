@@ -36,7 +36,6 @@ export class DetailsComponent implements OnInit{
           this.service.getVideos(myId).subscribe(Response=>{
             this.myVideos.push(Response.results.slice(0,6))
             this.AfterLoadVideos.push(Response.results)
-            this.myVideos['url'] = this.senitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + this.myVideos['key']) 
             console.log(this.myVideos);
           })
        })
