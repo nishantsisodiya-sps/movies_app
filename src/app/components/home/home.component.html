@@ -1,0 +1,46 @@
+<div>
+    <div class="poster">
+      <div class="carousel-item" *ngFor="let item of data" >
+        <img class="imgmain" src="https://image.tmdb.org/t/p/original/{{item.backdrop_path}}" alt="no image">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>{{item.original_title}}</h5>
+        </div>
+      </div>
+
+
+    </div>
+    <br>
+
+
+    <div>
+      <h5 style="color:white">Suggestions &nbsp;</h5>
+    </div>
+
+
+
+    <div class="divs">
+      <div class="divofdiv" *ngFor="let items of main" [routerLink]="['/details',items.id]">
+        <img class="partyImg" src="https://image.tmdb.org/t/p/original/{{items.poster_path}}" alt="">
+      </div>
+      
+    </div>
+    <br>
+
+    <div>
+      <h5 style="color:white">Continue Watching</h5>
+    </div>
+
+
+    <div class="moviesDiv">
+
+      <div class="card" *ngFor="let item of nowPlayingShow" style="width: 18rem;" [routerLink]="['/details',item.id]">
+        <img *ngIf="!item.poster_path" class="card-img-top"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png"
+          height="" alt="">
+        <img else class="card-img-top" src="https://image.tmdb.org/t/p/original/{{item.poster_path}}" alt="">
+        <div class="card-body" style="text-align: center;">
+          <h4>{{item.original_title}}</h4>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,16 @@
+<div style="min-width: 80vw; background-color: black; color: antiquewhite;">
+<h3>Upcoming Movies</h3>
+</div>
+
+<div class="moviesDiv">
+<div class="card" style="width: 14rem;" *ngFor="let item of upcoming" [routerLink]="['/details',item.id]">
+  <img *ngIf="!item.poster_path" class="card-img-top"
+  src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png"
+  height="" alt="">
+<img else class="card-img-top" src="https://image.tmdb.org/t/p/original/{{item.poster_path}}" alt="">
+    <div class="card-body">
+      <h6 class="card-text">{{item.title}}</h6>
+      <h6 class="card-text"><b>Release :</b> {{item.release_date}}</h6>
+    </div>
+  </div>
+</div>

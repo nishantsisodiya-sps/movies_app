@@ -1,0 +1,106 @@
+<div class="wrapper">
+  <!-- Sidebar  -->
+  <nav id="sidebar" #sidenav *ngIf="showsidenav">
+    <div class="sidebar-header">
+
+      <img style="margin-left: 13%;" src="https://miro.medium.com/max/150/1*VKY-Ldkt-iHobItql7G_5w.png" alt="">
+
+      <ul class="list-unstyled components">
+        <li>
+          <ul class="small">News Feeds</ul>
+          <br>
+          <ul routerLink="/home" routerLinkActive="active"><i class="fa-solid fa-compass"
+              style="color: rgb(192, 55, 55);"></i>&nbsp; Browse</ul><br>
+          <ul routerLink="/watchlist" routerLinkActive="active"><i class="fa-regular fa-heart"></i>&nbsp; Watchlist</ul>
+          <br>
+          <ul routerLink="/upcoming" routerLinkActive="active"><i class="fa-solid fa-calendar-days"></i>&nbsp; Coming
+            soon</ul>
+        </li>
+        <hr>
+        <li>
+          <ul class="small">TV shows</ul>
+          <br>
+
+          <ul routerLink="/shows">
+            Shows
+          </ul><br>
+
+          <ul routerLink="/airing">
+            Airing Shows Today
+          </ul><br>
+
+
+
+          <ul>
+            <img class="img-profile-side rounded-circle" src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp">&nbsp;
+            Akash &nbsp; &nbsp;<i class="fa-solid fa-wifi" style="font-size: smaller;"></i>
+          </ul><br>
+
+
+          <ul>
+            <img class="img-profile-side rounded-circle" src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp">&nbsp;
+            Piyush &nbsp; &nbsp; <i class="fa-solid fa-circle" style="font-size: 5px;
+            color: green;"></i>
+          </ul><br>
+
+
+        </li>
+        <ul style="font-size: 15px; cursor: pointer;"><i class="fa-solid fa-circle-chevron-down"
+            style="color:rgb(192, 55, 55);"></i>
+          &nbsp; Load more</ul>
+        <hr>
+        <ul style="cursor: pointer;" (click)="logout()">
+          <i class="fa-solid fa-right-from-bracket"></i>&nbsp; Logout
+        </ul>
+      </ul>
+    </div>
+  </nav>
+
+
+
+  <!------------------
+    page content
+    ----------->
+
+
+
+  <div id="content">
+    <nav class="navbar " *ngIf="showsidenav">
+      <div class="container-fluid">
+
+
+
+        <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+          data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <i class="fas fa-align-justify"></i>
+        </button>
+
+
+        <div class="inputDiv">
+          <label *ngIf="show" id="label" for="input"><i class="fa-solid fa-magnifying-glass"
+              style="color:#787777;"></i></label>
+          <input id="input" type="text" placeholder="Search Everything" #val (keyup)="search(val.value)"
+            (blur)="hideSearch()">
+          <ul id="suggested-search" *ngIf="searchResult">
+            <li *ngFor="let item of searchResult">
+              <a (mousedown)="redirectToDetails(item.id)">{{item.title}}</a>
+            </li>
+          </ul>
+        </div>
+
+
+        <div class="noti">
+          <a><i id="noti1" style="font-size: large;" class="fa-regular fa-comment-dots"></i></a> &nbsp; &nbsp;
+          <a><i id="noti2" style="font-size:large;" class="fa-sharp fa-solid fa-bell"></i></a>
+        </div>&nbsp; &nbsp;
+        <img class="img-profile rounded-circle" src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp">
+      </div>
+    </nav>
+
+
+    <!------------------------
+           Main Data
+     ------------------------>
+
+    <router-outlet></router-outlet>

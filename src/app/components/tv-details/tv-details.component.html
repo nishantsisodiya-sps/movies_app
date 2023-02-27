@@ -1,0 +1,57 @@
+<div>
+    <div class="poster">
+      <div class="carousel-item" >
+        <img class="imgmain" src="https://image.tmdb.org/t/p/original/" alt="no image">
+        <div class="carousel-caption d-none d-md-block">
+          <h5></h5>
+        </div>
+      </div>
+    </div>
+    <br>
+  
+  
+    <div>
+      <h5 style="color:white">Production Companies &nbsp;</h5>
+    </div>
+  
+  
+  
+    <div class="divs">
+      <div class="divofdiv" >
+        <img class="card-img-top" src="https://image.tmdb.org/t/p/original/" alt="">
+      </div>
+    </div>
+    <br>
+  
+  
+    <div>
+      <h5 style="color:white">Videos</h5>
+      <button *ngIf="showmore" mat-raised-button color="primary" class="btnShowMore" (click)="loadMore()">show
+        More</button>
+      <button *ngIf="!showmore" mat-raised-button color="primary" class="btnShowMore" (click)="hide()">Show less</button>
+    </div>
+    <br>
+  
+  
+    <div class="divs" >
+      <div class="divofdiv" style="max-width: 13em;">
+        <!-- <video width="180" height="120" controls="true">
+          <source src="https://www.youtube.com/watch?v={{item.key}}" type="video/mp4">
+        </video> -->
+  
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/" frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture">
+        </iframe>
+  
+      </div>
+    </div>
+  
+  
+  
+    <div class="divs" >
+      <div class="divofdiv" style="max-width: 13em;">
+        <video width="180" height="120" controls="true">
+          <source src="https://www.youtube.com/watch?v=" type="video/mp4">
+        </video>
+      </div>
+    </div>
