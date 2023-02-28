@@ -9,9 +9,9 @@ import { TvApiService } from 'src/app/shared/tv-api.service';
   styleUrls: ['./tv-details.component.css']
 })
 export class TvDetailsComponent implements OnInit {
-  showmore = false
+  showmore = true
   Details : any = []
-  
+  showVideos: any = []
   constructor(private service2 : TvApiService , private activate : ActivatedRoute){}
 
   ngOnInit(){
@@ -22,9 +22,18 @@ export class TvDetailsComponent implements OnInit {
   showDetails(){
     this.activate.paramMap.subscribe(result=>{
       let id = +result.get(' id')
+      console.log(id);
       this.service2.getDetails(id).subscribe(response=>{
        this.Details.push(response)
-      
+      console.log(this.Details);
+
+
+      // Grtting Videos
+      this.service2.getVideos(id).subscribe(response=>{
+        this.showVideos = response.results
+        console.log(this.showVideos)
+      })
+
       })
       
     })

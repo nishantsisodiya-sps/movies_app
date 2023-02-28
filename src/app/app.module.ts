@@ -18,6 +18,7 @@ import { DetailsComponent } from './components/details/details.component';
 import { TvShowsComponent } from './components/tv-shows/tv-shows.component';
 import { TVshowAiringComponent } from './components/t-vshow-airing/t-vshow-airing.component';
 import { TvDetailsComponent } from './components/tv-details/tv-details.component';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { TvDetailsComponent } from './components/tv-details/tv-details.component
     NgbModule,
     NgbCarouselModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

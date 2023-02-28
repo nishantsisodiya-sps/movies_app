@@ -23,3 +23,8 @@ h6{
 h3{
     color: cornflowerblue;
 }
+.Creators{
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-evenly;
+}

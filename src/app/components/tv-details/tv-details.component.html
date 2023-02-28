@@ -1,65 +1,101 @@
-<div  *ngFor="let item of Details">
-    <div class="poster">
-      <div class="carousel-item" >
-        <img class="imgmain" src="https://image.tmdb.org/t/p/original/{{item.backdrop_path}}" alt="no image">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>{{item.name}}</h5>
-        </div>
+<div *ngFor="let item of Details">
+  <div class="poster">
+    <div class="carousel-item">
+      <img class="imgmain" src="https://image.tmdb.org/t/p/original/{{item.backdrop_path}}" alt="no image">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>{{item.name}}</h5>
       </div>
     </div>
-    <br>
-  
-  
-    <div class="headBack">
-      <h5 style="color:white">Overview &nbsp;</h5>
-    </div>
-    <br>
-    <h6>{{item.overview}}</h6>
-    <br>
-  
-
-    <div class="headBack">
-      <h5 style="color:white">Episodes &nbsp;</h5>
-    </div>
+  </div>
   <br>
-  
-    <div class="maivBook">
-        <div class="card-body" style="color:white;">
-          <h3>Previous Episode</h3><br><br>
-          <h5>Name : {{item.last_episode_to_air.name}}</h5><br>
-          <h5>Episode no. : {{item.last_episode_to_air.episode_number}}</h5><br>
-          <h5>Runtime : {{item.last_episode_to_air.runtime}} Mins</h5>
-        </div>
-        <br>
-        
-        <div class="card-body" style="color:white;">
-          <h3>Upcoming Episode</h3><br><br>
-          <h5>Name : {{item.next_episode_to_air.name}}</h5><br>
-          <h5>Episode no. : {{item.next_episode_to_air.episode_number}}</h5><br>
-          <h5>Runtime : {{item.next_episode_to_air.runtime}} Mins</h5>
-        </div>
-      </div>
-    </div>
-   <br>
 
-    <div class="headBack">
-      <h5 style="color:white">Videos</h5>
-      <button *ngIf="showmore" mat-raised-button color="primary" class="btnShowMore" (click)="loadMore()">show
-        More</button>
-      <button *ngIf="!showmore" mat-raised-button color="primary" class="btnShowMore" (click)="hide()">Show less</button>
+
+  <div class="headBack">
+    <h5 style="color:white">Overview &nbsp;</h5>
+  </div>
+  <br>
+  <h6>{{item.overview}}</h6>
+  <br>
+
+  <div class="headBack">
+    <h5 style="color:white">Production Companies &nbsp;</h5>
+  </div>
+  <br>
+
+
+  <div class="divs">
+    <div class="divofdiv" *ngFor="let item of Details[0].production_companies">
+      <img class="card-img-top" src="https://image.tmdb.org/t/p/original/{{item.logo_path}}" alt="">
+    </div>
+  </div>
+  <br>
+
+
+  <div class="headBack">
+    <h5 style="color:white">Episodes &nbsp;</h5>
+  </div>
+  <br>
+
+  <div class="maivBook">
+    <div class="card-body">
+      <h3>Previous Episode</h3><br><br>
+      <h5>Name : {{item.last_episode_to_air.name}}</h5><br>
+      <h5>Episode no. : {{item.last_episode_to_air.episode_number}}</h5><br>
+      <h5>Runtime : {{item.last_episode_to_air.runtime}} Mins</h5><br>
+      <h5>Release Date : {{item.last_episode_to_air.air_date}}</h5>
     </div>
     <br>
 
-    <div class="headBack">
-      <h5>Creators</h5>
+    <div class="card-body" style="color:white;">
+      <h3>Upcoming Episode</h3><br><br>
+      <h5>Name : {{item.next_episode_to_air.name}}</h5><br>
+      <h5>Episode no. : {{item.next_episode_to_air.episode_number}}</h5><br>
+      <h5>Runtime : {{item.next_episode_to_air.runtime}} Mins</h5><br>
+      <h5>Release Date : {{item.next_episode_to_air.air_date}}</h5>
     </div>
+  </div>
+</div>
+<br>
 
-    <div class="Creators">
-      <div class="card" style="width: 18rem;" *ngFor="let item of Details">
-        <img class="card-img-top" src="https://image.tmdb.org/t/p/original/{{item.created_by.profile_path}}" alt="Card image cap">
-        <div class="card-body" style="color: white;">
-          <h5>Name : {{item.created_by.name}}</h5>
-        </div>
-      </div>
+<div class="headBack">
+  <h5 style="color:white">Videos</h5>
+  <!-- <button *ngIf="showmore" mat-raised-button color="primary" class="btnShowMore" (click)="loadMore()">show
+    More</button>
+  <button *ngIf="!showmore" mat-raised-button color="primary" class="btnShowMore" (click)="hide()">Show less</button> -->
+</div>
+<br>
+
+<div class="divs" *ngIf="showmore" >
+  <!-- <iframe src="https://www.youtube.com/embed/2Ity_VBjTGo">
+  </iframe> -->
+  <div class="divofdiv" style="max-width: 13em; width: 19%;" *ngFor="let item of showVideos">
+    <iframe src="https://www.youtube.com/embed/{{item.key}}">
+    </iframe>
+  </div> 
+</div>
+<br>
+
+
+<!-- <div class="divs" *ngIf="!showmore">
+  <div class="divofdiv" style="max-width: 13em;" >
+    <video width="180" height="120" controls="true">
+      <source src="https://www.youtube.com/watch?v={{item.key}}" type="video/mp4">
+    </video>
+  </div>
+</div>
+<br> -->
+
+<div class="headBack">
+  <h5>Creators</h5>
+</div>
+
+<div class="Creators">
+  <div class="card" style="width: 13rem;" *ngFor="let item of Details[0].created_by">
+    <img class="card-img-top" src="https://image.tmdb.org/t/p/original/{{item.profile_path}}" alt="Card image cap">
+    <div class="card-body" style="color: white;">
+      <h5>Name : {{item.name}}</h5>
     </div>
-  
+  </div>
+</div>
+<br>
+
