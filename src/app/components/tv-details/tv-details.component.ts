@@ -24,7 +24,7 @@ export class TvDetailsComponent implements OnInit {
       let id = +result.get(' id')
       this.service2.getDetails(id).subscribe(response=>{
        this.Details.push(response)
-       console.log(this.Details);
+      
       })
       
     })

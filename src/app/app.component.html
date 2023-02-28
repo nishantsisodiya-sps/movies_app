@@ -71,10 +71,12 @@
 
 
         <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
-          data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          data-target="#sidenav" aria-controls="navbarSupportedContent" aria-expanded="false"
           aria-label="Toggle navigation">
           <i class="fas fa-align-justify"></i>
         </button>
+
+       
 
 
         <div class="inputDiv">
@@ -84,7 +86,9 @@
             (blur)="hideSearch()">
           <ul id="suggested-search" *ngIf="searchResult">
             <li *ngFor="let item of searchResult">
-              <a (mousedown)="redirectToDetails(item.id)">{{item.title}}</a>
+              <a (mousedown)="redirectToDetails(item.id , item)">
+                <img src="https://image.tmdb.org/t/p/original/{{item.poster_path}}" width="15%" alt="">
+                {{item.title}}</a>
             </li>
           </ul>
         </div>

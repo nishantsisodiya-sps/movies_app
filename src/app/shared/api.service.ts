@@ -26,7 +26,7 @@ export class ApiService {
   }
 
   searchMovies(val:any):Observable<any>{
-    return this.http.get("https://api.themoviedb.org/3/search/movie?api_key=ec8394f8af9fce4604d5da48e0b3d405&query=" + val)
+    return this.http.get("https://api.themoviedb.org/3/search/multi?api_key=ec8394f8af9fce4604d5da48e0b3d405&language=en-US&page=1&include_adult=false&query=" + val)
   }
 
   getSingleMovie(id:any):Observable<any>{

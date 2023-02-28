@@ -9,44 +9,51 @@ import { ApiService } from './shared/api.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  sideOpen = true
   title = 'open_movies';
   show = true;
   showsidenav = false;
-  value:any;
-  searchResult :Root[] | undefined
-  constructor(private router : Router , private service : ApiService){}
+  value: any;
+  searchResult: Root[] | undefined
+  constructor(private router: Router, private service: ApiService) { }
 
   ngOnInit(): void {
-   this.hidenav()
+    this.hidenav()
   }
 
-  hidenav(){
+  hidenav() {
     let token = localStorage.getItem('token')
-    if(token){
+    if (token) {
       this.showsidenav = true
-    }else{
+    } else {
       this.showsidenav = false
     }
   }
 
-  logout(){
+  logout() {
     localStorage.removeItem('token')
     this.router.navigate(['/login'])
     this.hidenav()
   }
 
-  search(val:any){
-    this.service.searchMovies(val).subscribe(response=>{
+  search(val: any) {
+    this.service.searchMovies(val).subscribe(response => {
       this.searchResult = response.results
     })
   }
 
-  hideSearch(){
+  hideSearch() {
     this.searchResult = undefined
   }
 
-  redirectToDetails(id:number){
-    this.router.navigate(['/details' , id])
-  }
+  redirectToDetails(id: number, value: any) {
 
+    if (value.media_type == 'movie') {
+      console.log("movie");
+      this.router.navigate(['/details', id])
+    } else if (value.media_type == 'tv') {
+      console.log("tv");
+      this.router.navigate(['/ShowDetails', id])
+    }
+  }
 }

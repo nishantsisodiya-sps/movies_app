@@ -10,7 +10,7 @@
     <br>
   
   
-    <div>
+    <div class="headBack">
       <h5 style="color:white">Overview &nbsp;</h5>
     </div>
     <br>
@@ -18,38 +18,48 @@
     <br>
   
 
-    <div>
+    <div class="headBack">
       <h5 style="color:white">Episodes &nbsp;</h5>
     </div>
   <br>
   
-  
-  <div class="divs">
-  <div class="divofdiv" >
-      <img class="card-img-top" src="https://image.tmdb.org/t/p/original/{{item.last_episode_to_air.still_path}}" alt="">
-    </div>
-    <h5>Name : {{item.last_episode_to_air.name}}</h5>
-    <h5>Episode No. : {{item.last_episode_to_air.episode_number}}</h5>
-    <h5>Time : {{item.last_episode_to_air.runtime}}</h5>
-  </div>
-  <br>
-
-
-
-  <div class="divs">
-  <div class="divofdiv" >
-        <img class="card-img-top" src="https://image.tmdb.org/t/p/original/{{item.next_episode_to_air.still_path}}" alt="">
+    <div class="maivBook">
+        <div class="card-body" style="color:white;">
+          <h3>Previous Episode</h3><br><br>
+          <h5>Name : {{item.last_episode_to_air.name}}</h5><br>
+          <h5>Episode no. : {{item.last_episode_to_air.episode_number}}</h5><br>
+          <h5>Runtime : {{item.last_episode_to_air.runtime}} Mins</h5>
+        </div>
+        <br>
+        
+        <div class="card-body" style="color:white;">
+          <h3>Upcoming Episode</h3><br><br>
+          <h5>Name : {{item.next_episode_to_air.name}}</h5><br>
+          <h5>Episode no. : {{item.next_episode_to_air.episode_number}}</h5><br>
+          <h5>Runtime : {{item.next_episode_to_air.runtime}} Mins</h5>
+        </div>
       </div>
-      <h5>Name : {{item.next_episode_to_air.name}}</h5>
-      <h5>Episode No. : {{item.next_episode_to_air.episode_number}}</h5>
-      <h5>Time : {{item.next_episode_to_air.runtime}}</h5>
     </div>
-    <br>  
-    <div>
+   <br>
+
+    <div class="headBack">
       <h5 style="color:white">Videos</h5>
       <button *ngIf="showmore" mat-raised-button color="primary" class="btnShowMore" (click)="loadMore()">show
         More</button>
       <button *ngIf="!showmore" mat-raised-button color="primary" class="btnShowMore" (click)="hide()">Show less</button>
     </div>
     <br>
+
+    <div class="headBack">
+      <h5>Creators</h5>
+    </div>
+
+    <div class="Creators">
+      <div class="card" style="width: 18rem;" *ngFor="let item of Details">
+        <img class="card-img-top" src="https://image.tmdb.org/t/p/original/{{item.created_by.profile_path}}" alt="Card image cap">
+        <div class="card-body" style="color: white;">
+          <h5>Name : {{item.created_by.name}}</h5>
+        </div>
+      </div>
+    </div>
   

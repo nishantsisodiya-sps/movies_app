@@ -20,4 +20,6 @@ export class TvApiService {
   getDetails(id:number):Observable<any>{
     return this.http.get(`https://api.themoviedb.org/3/tv/${id}?api_key=ec8394f8af9fce4604d5da48e0b3d405&language=en-US`)
   }
+
+ 
 }
