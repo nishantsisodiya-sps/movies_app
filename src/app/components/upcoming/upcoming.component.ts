@@ -20,7 +20,7 @@ export class UpcomingComponent implements OnInit {
   upcomingMovies(){
     this.service.upComing().subscribe(response=>{
       this.upcoming = response.results
-      console.log(this.upcoming);
+      
     })
   }
 

@@ -341,3 +341,13 @@ nav li ul{
     background-color: black;
     width: 100%;
 }
+#paginator{
+    width: 100%;
+    background-color: #101010;
+    color: white;
+}
+
+
+#icon :active{
+    color: rgb(192, 55, 55);
+}

@@ -36,15 +36,15 @@
 
   <div class="divs2" *ngIf="showmore">
     <div class="divofdiv2" style="max-width: 13em;" *ngFor="let item of myVideos">
-      <iframe class="frame" src="https://www.youtube.com/embed/SIQD0pUpC_Q" >
+      <iframe class="frame" src="https://www.youtube.com/embed/${item.key}">
       </iframe>
     </div>
   </div>
 
-
+           
   <div class="divs2" *ngIf="!showmore">
     <div class="divofdiv2" style="max-width: 13em; " *ngFor="let item of AfterLoadVideos">
-      <iframe class="frame" src="https://www.youtube.com/embed/SIQD0pUpC_Q">
+      <iframe class="frame" src="https://www.youtube.com/embed/${item.key}">
       </iframe>
     </div>
   </div>

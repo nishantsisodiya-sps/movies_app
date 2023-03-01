@@ -20,6 +20,8 @@ import { TVshowAiringComponent } from './components/t-vshow-airing/t-vshow-airin
 import { TvDetailsComponent } from './components/tv-details/tv-details.component';
 import {MatSelectModule} from '@angular/material/select';
 import { CustomPipe } from './custom.pipe';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { CustomPipe } from './custom.pipe';
     NgbCarouselModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatPaginatorModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

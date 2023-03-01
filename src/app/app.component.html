@@ -9,11 +9,13 @@
         <li>
           <ul class="small">News Feeds</ul>
           <br>
-          <ul routerLink="/home" routerLinkActive="active"><i class="fa-solid fa-compass"
-              style="color: rgb(192, 55, 55);"></i>&nbsp; Browse</ul><br>
-          <ul routerLink="/watchlist" routerLinkActive="active"><i class="fa-regular fa-heart"></i>&nbsp; Watchlist</ul>
+          <ul routerLink="/home" routerLinkActive="is-active" #rla = "routerLinkActive">
+            <i id="icon" class="fa-solid fa-compass"></i>&nbsp; Browse</ul><br>
+          <ul routerLink="/watchlist" routerLinkActive="is-active">
+            <i  id="icon" class="fa-regular fa-heart"></i>&nbsp; Watchlist</ul>
           <br>
-          <ul routerLink="/upcoming" routerLinkActive="active"><i class="fa-solid fa-calendar-days"></i>&nbsp; Coming
+          <ul routerLink="/upcoming" routerLinkActive="is-active">
+            <i id="icon" class="fa-solid fa-calendar-days"></i>&nbsp; Coming
             soon</ul>
         </li>
         <hr>

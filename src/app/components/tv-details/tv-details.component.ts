@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ApiService } from 'src/app/shared/api.service';
 import { TvApiService } from 'src/app/shared/tv-api.service';
 
 @Component({
@@ -14,6 +13,7 @@ export class TvDetailsComponent implements OnInit {
   Details: any = []                             // storing Details of the shows
   showVideos: any = []                           // storing videos of BTS
   season: any = []                              // storing seasons
+  
   constructor(private service2: TvApiService, private activate: ActivatedRoute) { }
 
   ngOnInit() {
@@ -24,6 +24,7 @@ export class TvDetailsComponent implements OnInit {
   showDetails() {
     this.activate.paramMap.subscribe(result => {
       let id = +result.get(' id')
+      console.log(id);
       this.service2.getDetails(id).subscribe(response => {
         this.Details.push(response)
 

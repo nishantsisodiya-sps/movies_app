@@ -11,6 +11,4 @@ constructor(private senitizer : DomSanitizer){}
   transform(url : string){
     return this.senitizer.bypassSecurityTrustResourceUrl(url);
   }
-
-
 }
