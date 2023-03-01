@@ -253,6 +253,11 @@ nav li ul{
     justify-content: space-around;
     flex-wrap: wrap;
 }
+.divs2{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
 .moviesDiv{
     display: flex;
     justify-content: space-around;
@@ -327,4 +332,12 @@ nav li ul{
     max-width: 15rem;
     max-height: 14em;
    
+}
+.frame{
+    width: 100%;
+}
+
+.headBack{
+    background-color: black;
+    width: 100%;
 }

@@ -37,7 +37,7 @@
         <img *ngIf="!item.poster_path" class="card-img-top"
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png"
           height="" alt="">
-        <img else class="card-img-top" src="https://image.tmdb.org/t/p/original/{{item.poster_path}}" alt="">
+        <img *ngIf="item.poster_path" class="card-img-top" src="https://image.tmdb.org/t/p/original/{{item.poster_path}}" alt="">
         <div class="card-body" style="text-align: center;">
           <h4>{{item.original_title}}</h4>
         </div>

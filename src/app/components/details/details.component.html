@@ -10,7 +10,7 @@
   <br>
 
 
-  <div>
+  <div class="headBack">
     <h5 style="color:white">Production Companies &nbsp;</h5>
   </div>
 
@@ -18,13 +18,14 @@
 
   <div class="divs">
     <div class="divofdiv" *ngFor="let item of production">
-      <img class="card-img-top" src="https://image.tmdb.org/t/p/original/{{item.logo_path}}" alt="">
+      <img *ngIf="item.logo_path" class="card-img-top" src="https://image.tmdb.org/t/p/original/{{item.logo_path}}" />
+      <img *ngIf="!item.logo_path" class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/330px-No-Image-Placeholder.svg.png" alt="no Image" />
     </div>
   </div>
   <br>
 
 
-  <div>
+  <div class="headBack">
     <h5 style="color:white">Videos</h5>
     <button *ngIf="showmore" mat-raised-button color="primary" class="btnShowMore" (click)="loadMore()">show
       More</button>
@@ -33,20 +34,17 @@
   <br>
 
 
-  <div class="divs" *ngIf="showmore">
-    <div class="divofdiv" style="max-width: 13em;" *ngFor="let item of myVideos[0]">
-      <video width="180" height="120" controls="true">
-        <source src="https://www.youtube.com/watch?v={{item.key}}" type="video/mp4">
-      </video>
+  <div class="divs2" *ngIf="showmore">
+    <div class="divofdiv2" style="max-width: 13em;" *ngFor="let item of myVideos">
+      <iframe class="frame" src="https://www.youtube.com/embed/SIQD0pUpC_Q" >
+      </iframe>
     </div>
   </div>
 
 
-
-  <div class="divs" *ngIf="!showmore">
-    <div class="divofdiv" style="max-width: 13em;" *ngFor="let item of AfterLoadVideos[0]">
-      <video width="180" height="120" controls="true">
-        <source src="https://www.youtube.com/watch?v={{item.key}}" type="video/mp4">
-      </video>
+  <div class="divs2" *ngIf="!showmore">
+    <div class="divofdiv2" style="max-width: 13em; " *ngFor="let item of AfterLoadVideos">
+      <iframe class="frame" src="https://www.youtube.com/embed/SIQD0pUpC_Q">
+      </iframe>
     </div>
   </div>

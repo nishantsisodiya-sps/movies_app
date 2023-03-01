@@ -19,6 +19,7 @@ import { TvShowsComponent } from './components/tv-shows/tv-shows.component';
 import { TVshowAiringComponent } from './components/t-vshow-airing/t-vshow-airing.component';
 import { TvDetailsComponent } from './components/tv-details/tv-details.component';
 import {MatSelectModule} from '@angular/material/select';
+import { CustomPipe } from './custom.pipe';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import {MatSelectModule} from '@angular/material/select';
     TvShowsComponent,
     TVshowAiringComponent,
     TvDetailsComponent,
+    CustomPipe,
  
   ],
   imports: [

@@ -16,10 +16,7 @@ h6{
 .maivBook{
     display: flex;
 }
-.headBack{
-    background-color: black;
-    width: 100%;
-}
+
 h3{
     color: cornflowerblue;
 }
@@ -27,4 +24,22 @@ h3{
     margin-top: 2%;
     display: flex;
     justify-content: space-evenly;
+}
+.divofdiv{
+    max-width: 50vh;
+    margin: 2%;
+    background-color: white;
+}
+.divofdiv2{
+    width: 100%;
+    max-width: 50vh;
+    margin: 2%;
+}
+.card-img-top2{
+    height: 50% !important ; 
+    display: block;
+}
+.divs2 :hover{
+    transition: all .2s ease-in-out;
+    transform: scale(1.1);
 }

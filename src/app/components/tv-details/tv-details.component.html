@@ -25,11 +25,26 @@
 
   <div class="divs">
     <div class="divofdiv" *ngFor="let item of Details[0].production_companies">
-      <img class="card-img-top" src="https://image.tmdb.org/t/p/original/{{item.logo_path}}" alt="">
-    </div>
+      <img *ngIf="item.logo_path" class="card-img-top" src="https://image.tmdb.org/t/p/original/{{item.logo_path}}" />
+      <img *ngIf="!item.logo_path" class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/330px-No-Image-Placeholder.svg.png" alt="no Image" />
   </div>
   <br>
 
+  <div class="headBack">
+    <h5 style="color:white">Seasons &nbsp;</h5>
+  </div>
+  <br>
+
+  <div class="card" style="width: 13rem; text-align: center;" *ngFor="let item of season">
+    <p>Season : {{item.season_number}}</p>
+    <img class="card-img-top2" src="https://image.tmdb.org/t/p/original/{{item.poster_path}}" alt="Card image cap">
+    <div class="card-body" style="color: white;">
+      <h5>Total Episodes : {{item.name}}</h5><br>
+      <h5>Release Date : {{item.air_date}}</h5>
+    </div>
+  </div>
+
+  <br>
 
   <div class="headBack">
     <h5 style="color:white">Episodes &nbsp;</h5>
@@ -44,7 +59,7 @@
       <h5>Runtime : {{item.last_episode_to_air.runtime}} Mins</h5><br>
       <h5>Release Date : {{item.last_episode_to_air.air_date}}</h5>
     </div>
-    <br>
+    <!-- <br> -->
 
     <div class="card-body" style="color:white;">
       <h3>Upcoming Episode</h3><br><br>
@@ -65,22 +80,19 @@
 </div>
 <br>
 
-<div class="divs" *ngIf="showmore" >
-  <!-- <iframe src="https://www.youtube.com/embed/2Ity_VBjTGo">
-  </iframe> -->
-  <div class="divofdiv" style="max-width: 13em; width: 19%;" *ngFor="let item of showVideos">
-    <iframe src="https://www.youtube.com/embed/{{item.key}}">
+<div class="divs2" *ngIf="showmore" >
+  <div class="divofdiv2" style="max-width: 13em; width: 19%;" *ngFor="let item of showVideos">
+    <iframe class="frame" src="https://www.youtube.com/embed/8SWhBsbxmpk">
     </iframe>
   </div> 
 </div>
 <br>
 
 
-<!-- <div class="divs" *ngIf="!showmore">
-  <div class="divofdiv" style="max-width: 13em;" >
-    <video width="180" height="120" controls="true">
-      <source src="https://www.youtube.com/watch?v={{item.key}}" type="video/mp4">
-    </video>
+<!-- <div class="divs2" *ngIf="!showmore">
+  <div class="divofdiv2" style="max-width: 13em;" >
+    <iframe class="frame" src="https://www.youtube.com/embed/8SWhBsbxmpk">
+    </iframe>
   </div>
 </div>
 <br> -->
