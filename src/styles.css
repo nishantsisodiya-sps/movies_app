@@ -72,13 +72,13 @@ a:focus {
 #sidebar .sidebar-header {
     text-align: center;
     background: #101010;
-    position: fixed;
+    /* position: fixed; */
     
 }
 
 #sidebar ul.components {
     padding: 20px 0;
-    position: fixed;
+    /* position: fixed; */
 }
 
 #sidebar ul p {
@@ -214,12 +214,13 @@ a.article:hover {
 }
 .small{
     font-size: x-small !important; 
+    color: cornflowerblue;
 }
 .img-profile-side{
     height: 16px;
 }
 
-nav li ul{
+nav ul li{
     font-size: 15px;
     cursor: pointer;
 }
@@ -284,7 +285,7 @@ nav li ul{
 .card-img-top{
     display: block;
     margin: auto;
-    height: 80%;
+    height: 75%;
     
 }
 .carousel-item{
@@ -350,4 +351,10 @@ nav li ul{
 
 .is-active{
     color: rgb(192, 55, 55);
+}
+ul{
+    list-style-type: none;
+}
+.fas{
+    color:rgb(192, 55, 55);
 }

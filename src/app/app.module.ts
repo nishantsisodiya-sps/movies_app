@@ -22,6 +22,8 @@ import {MatSelectModule} from '@angular/material/select';
 import { CustomPipe } from './custom.pipe';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { InTheaterComponent } from './components/in-theater/in-theater.component';
+import { CertificatesComponent } from './components/certificates/certificates.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     TVshowAiringComponent,
     TvDetailsComponent,
     CustomPipe,
+    InTheaterComponent,
+    CertificatesComponent,
  
   ],
   imports: [

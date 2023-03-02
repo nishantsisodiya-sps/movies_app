@@ -1,21 +1,33 @@
 <div>
     <div class="poster">
-      <div class="carousel-item" *ngFor="let item of data" >
+      <!-- <div class="carousel-item" *ngFor="let item of data" >
         <img class="imgmain" src="https://image.tmdb.org/t/p/original/{{item.backdrop_path}}" alt="no image">
         <div class="carousel-caption d-none d-md-block">
           <h5>{{item.original_title}}</h5>
         </div>
-      </div>
+      </div> -->
 
+      <ngb-carousel
+      #carousel
+	[interval]="1000">
+        <ng-template ngbSlide *ngFor="let item of data">
+          <div class="picsum-img-wrapper">
+            <img class="imgmain" src="https://image.tmdb.org/t/p/original/{{item.backdrop_path}}" alt="" />
+          </div>
+          <div class="carousel-caption">
+            <h3>{{item.original_title}}</h3>  
+          </div>
+        </ng-template>
+    </ngb-carousel>
 
     </div>
     <br>
 
 
-    <div>
+    <div class="headBack">
       <h5 style="color:white">Suggestions &nbsp;</h5>
     </div>
-
+<br>
 
 
     <div class="divs">
@@ -26,17 +38,18 @@
     </div>
     <br>
 
-    <div>
+    <div class="headBack">
       <h5 style="color:white">Continue Watching</h5>
     </div>
-
+    <br>
 
     <div class="moviesDiv">
 
-      <div class="card" *ngFor="let item of nowPlayingShow" style="width: 18rem;" [routerLink]="['/details',item.id]">
+      <div class="card" *ngFor="let item of nowPlayingShow" style="width: 15rem;" [routerLink]="['/details',item.id]">
         <img *ngIf="!item.poster_path" class="card-img-top"
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png"
           height="" alt="">
+
         <img *ngIf="item.poster_path" class="card-img-top" src="https://image.tmdb.org/t/p/original/{{item.poster_path}}" alt="">
         <div class="card-body" style="text-align: center;">
           <h4>{{item.original_title}}</h4>

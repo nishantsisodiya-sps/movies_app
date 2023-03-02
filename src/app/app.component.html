@@ -6,58 +6,64 @@
       <img style="margin-left: 13%;" src="https://miro.medium.com/max/150/1*VKY-Ldkt-iHobItql7G_5w.png" alt="">
 
       <ul class="list-unstyled components">
-        <li>
+        
           <ul class="small">News Feeds</ul>
           <br>
-          <ul routerLink="/home" routerLinkActive="is-active">
-            <i id="icon" class="fa-solid fa-compass"></i>&nbsp; Browse</ul><br>
-          <ul routerLink="/watchlist" routerLinkActive="is-active">
-            <i  id="icon" class="fa-regular fa-heart"></i>&nbsp; Watchlist</ul>
+          <li routerLink="/home" routerLinkActive="is-active">
+            <i id="icon" class="fa-solid fa-compass"></i>&nbsp; Browse
+          </li><br>
+          <li routerLink="/watchlist" routerLinkActive="is-active">
+            <i id="icon" class="fa-regular fa-heart"></i>&nbsp; Watchlist
+          </li>
           <br>
-          <ul routerLink="/upcoming" routerLinkActive="is-active">
+          <li routerLink="/upcoming" routerLinkActive="is-active">
             <i id="icon" class="fa-solid fa-calendar-days"></i>&nbsp; Coming
-            soon</ul>
-        </li>
+            soon
+          </li>
+          <br>
+          <li routerLink="/theater" routerLinkActive="is-active">
+            <i class="fa-solid fa-film"></i>&nbsp;
+            In Theaters
+          </li><br>
+        
+
         <hr>
-        <li>
+        <ul>
           <ul class="small">TV shows</ul>
           <br>
 
-          <ul routerLink="/shows" routerLinkActive="is-active">
+          <li routerLink="/shows" routerLinkActive="is-active">
             Shows
-          </ul><br>
+          </li><br>
 
-          <ul routerLink="/airing" routerLinkActive="is-active">
-            Airing Shows Today
-          </ul><br>
-
-
-
-          <ul>
-            <img class="img-profile-side rounded-circle" src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp">&nbsp;
-            Akash &nbsp; &nbsp;<i class="fa-solid fa-wifi" style="font-size: smaller;"></i>
-          </ul><br>
-
-
-          <ul>
-            <img class="img-profile-side rounded-circle" src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp">&nbsp;
-            Piyush &nbsp; &nbsp; <i class="fa-solid fa-circle" style="font-size: 5px;
-            color: green;"></i>
-          </ul><br>
-
-
-        </li>
-        <ul style="font-size: 15px; cursor: pointer;"><i class="fa-solid fa-circle-chevron-down"
-            style="color:rgb(192, 55, 55);"></i>
-          &nbsp; Load more</ul>
-        <hr>
-        <ul style="cursor: pointer;" (click)="logout()">
-          <i class="fa-solid fa-right-from-bracket"></i>&nbsp; Logout
+          <li routerLink="/airing" routerLinkActive="is-active">
+            Airing Shows
+          </li><br>
         </ul>
-      </ul>
+        
+          <li style="font-size: 15px; cursor: pointer;">
+          <a (click)="showMore = !showMore">
+            &nbsp; Load more
+            <i class="fas" [ngClass]="showMore ? 'fa-circle-chevron-up' : 'fa-circle-chevron-down'"></i>
+          </a>
+          
+          <ng-container *ngIf="showMore">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/certificate" routerLinkActive="active">Certificates</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" (click)="logout()">Logout</a>
+        </li> -->
+      </ng-container>
+      
+      <hr>
+      <li style="cursor: pointer;" (click)="logout()">
+        <i class="fa-solid fa-right-from-bracket"></i>&nbsp; Logout
+      </li>
+    </ul>
     </div>
   </nav>
-
+  
 
 
   <!---------------------
@@ -78,7 +84,7 @@
           <i class="fas fa-align-justify"></i>
         </button>
 
-       
+
 
 
         <div class="inputDiv">
@@ -101,7 +107,7 @@
           <a><i id="noti2" style="font-size:large;" class="fa-sharp fa-solid fa-bell"></i></a>
         </div>&nbsp; &nbsp;
         <img class="img-profile rounded-circle" src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp">
-        
+
         <!-- <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
             <img class="img-profile rounded-circle" src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp">

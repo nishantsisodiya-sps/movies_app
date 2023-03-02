@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   showsidenav = false;
   value: any;
   searchResult: Root[] | undefined
-  
+  showMore = false
   constructor(private router: Router, private service: ApiService) { }
 
   ngOnInit(): void {

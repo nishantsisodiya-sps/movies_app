@@ -1,0 +1,32 @@
+h3{
+    text-align: center;
+    margin-bottom: 2%;
+}
+.card-img-top{
+    height: 75% !important;
+}
+.moviesDiv{
+    margin: 2%;
+}
+.card-body{
+    color: white;
+}
+.card{
+    width: 100%;
+}
+.img-fluid{
+    height: 71%;
+    width: 90%;
+   
+}
+.card-title{
+    text-align: center;
+}
+
+h4{
+    display: inline;
+    color: cornflowerblue;
+}
+p{
+    display: inline;
+}

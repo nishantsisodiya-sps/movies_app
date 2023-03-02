@@ -18,16 +18,7 @@ export class HomeComponent implements OnInit{
   constructor(private service : ApiService){}
 
   ngOnInit(): void {
-    this.getnowPlaying();
     this.mainImageApi()
-  }
-
-  getnowPlaying(){
-    this.service.nowPlaying().subscribe(Response=>{
-      this.nowPlaying = Response.results
-      this.nowPlayingShow = this.nowPlaying.slice(0, 8)
-
-    })
   }
 
   mainImageApi(){
@@ -36,6 +27,8 @@ export class HomeComponent implements OnInit{
       this.mainMovies = response.results;
       let arr = this.mainMovies.slice(0,6);
       this.main = arr
+      this.nowPlayingShow = this.mainMovies.slice(7)
+      
     })
   }
 

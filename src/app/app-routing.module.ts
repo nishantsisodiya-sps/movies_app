@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CertificatesComponent } from './components/certificates/certificates.component';
 import { DetailsComponent } from './components/details/details.component';
 import { HomeComponent } from './components/home/home.component';
+import { InTheaterComponent } from './components/in-theater/in-theater.component';
 import { LoginComponent } from './components/login/login.component';
 import { TVshowAiringComponent } from './components/t-vshow-airing/t-vshow-airing.component';
 import { TvDetailsComponent } from './components/tv-details/tv-details.component';
@@ -19,6 +21,8 @@ const routes: Routes = [
   {path:'shows' , component:TvShowsComponent},
   {path:'airing' , component:TVshowAiringComponent},
   {path:'ShowDetails/: id' , component:TvDetailsComponent},
+  {path:'theater' , component:InTheaterComponent},
+  {path:'certificate' , component:CertificatesComponent},
 ];
 
 @NgModule({
