@@ -30,4 +30,16 @@ export class TvApiService {
     return this.http.get('https://api.themoviedb.org/3/certification/movie/list?api_key=ec8394f8af9fce4604d5da48e0b3d405')
   }
 
+  getList():Observable<any>{
+    return this.http.get('https://api.themoviedb.org/3/tv/on_the_air?api_key=ec8394f8af9fce4604d5da48e0b3d405&language=en-US&page=1')
+  }
+
+  getGenereTv():Observable<any>{
+    return this.http.get('https://api.themoviedb.org/3/genre/tv/list?api_key=ec8394f8af9fce4604d5da48e0b3d405&language=en-US')
+  }
+
+  getGenresShowsList(id:number):Observable<any>{
+    return this.http.get(`https://api.themoviedb.org/3/discover/tv?api_key=ec8394f8af9fce4604d5da48e0b3d405&language=en-US&with_genres=${id}`)
+  }
+
 }

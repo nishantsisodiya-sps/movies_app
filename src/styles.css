@@ -265,6 +265,7 @@ nav ul li{
     flex-wrap: wrap;
     color: white;
     aspect-ratio: 6/2;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
     
 }
@@ -275,6 +276,7 @@ nav ul li{
     min-height: 12em;
     height: 23em;
     cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .imgmain{
     width: 76vw;
@@ -357,4 +359,8 @@ ul{
 }
 .fas{
     color:rgb(192, 55, 55);
+}
+
+ul li{
+    cursor: pointer;
 }

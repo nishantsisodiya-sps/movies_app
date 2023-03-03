@@ -23,7 +23,9 @@ import { CustomPipe } from './custom.pipe';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { InTheaterComponent } from './components/in-theater/in-theater.component';
-import { CertificatesComponent } from './components/certificates/certificates.component';
+import {IvyCarouselModule} from 'carousel-angular';
+import { AllMoviesComponent } from './components/all-movies/all-movies.component';
+import { AllShowsComponent } from './components/all-shows/all-shows.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { CertificatesComponent } from './components/certificates/certificates.co
     TvDetailsComponent,
     CustomPipe,
     InTheaterComponent,
-    CertificatesComponent,
+    AllMoviesComponent,
+    AllShowsComponent,
  
   ],
   imports: [
@@ -54,7 +57,8 @@ import { CertificatesComponent } from './components/certificates/certificates.co
     ReactiveFormsModule,
     MatSelectModule,
     MatPaginatorModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    IvyCarouselModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,15 +1,9 @@
 <div>
     <div class="poster">
-      <!-- <div class="carousel-item" *ngFor="let item of data" >
-        <img class="imgmain" src="https://image.tmdb.org/t/p/original/{{item.backdrop_path}}" alt="no image">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>{{item.original_title}}</h5>
-        </div>
-      </div> -->
 
-      <ngb-carousel
+      <ngb-carousel *ngIf="data"
       #carousel
-	[interval]="1000">
+	    [interval]="1000">
         <ng-template ngbSlide *ngFor="let item of data">
           <div class="picsum-img-wrapper">
             <img class="imgmain" src="https://image.tmdb.org/t/p/original/{{item.backdrop_path}}" alt="" />
@@ -18,17 +12,25 @@
             <h3>{{item.original_title}}</h3>  
           </div>
         </ng-template>
-    </ngb-carousel>
+    </ngb-carousel> 
+
+
+    <!-- <carousel>
+      <ng-container *ngFor="let item of data">
+        <ng-container *carouselItem>
+          <img class="imgmain" src="https://image.tmdb.org/t/p/original/{{item.backdrop_path}}" alt="">
+        </ng-container>
+      </ng-container>
+    </carousel> -->
+
 
     </div>
     <br>
-
 
     <div class="headBack">
       <h5 style="color:white">Suggestions &nbsp;</h5>
     </div>
 <br>
-
 
     <div class="divs">
       <div class="divofdiv" *ngFor="let items of main" [routerLink]="['/details',items.id]">

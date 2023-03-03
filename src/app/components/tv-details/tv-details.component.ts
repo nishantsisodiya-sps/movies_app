@@ -24,7 +24,6 @@ export class TvDetailsComponent implements OnInit {
   showDetails() {
     this.activate.paramMap.subscribe(result => {
       let id = +result.get(' id')
-      console.log(id);
       this.service2.getDetails(id).subscribe(response => {
         this.Details.push(response)
 

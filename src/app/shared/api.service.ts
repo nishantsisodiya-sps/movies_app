@@ -18,7 +18,7 @@ export class ApiService {
   }
 
   upComing():Observable<any>{
-    return this.http.get('https://api.themoviedb.org/3/movie/upcoming?api_key=ec8394f8af9fce4604d5da48e0b3d405&language=en-US')
+    return this.http.get('https://api.themoviedb.org/3/movie/upcoming?api_key=ec8394f8af9fce4604d5da48e0b3d405&language=en-US&page=1')
   }
 
   watchList():Observable<any>{
@@ -35,6 +35,14 @@ export class ApiService {
 
   getVideos(id:any):Observable<any>{
     return this.http.get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=ec8394f8af9fce4604d5da48e0b3d405&language=en-US `)
+  }
+
+  getGenres():Observable<any>{
+    return this.http.get('https://api.themoviedb.org/3/genre/movie/list?api_key=ec8394f8af9fce4604d5da48e0b3d405&language=en-US')
+  }
+
+  getMoviesListByGenres(id:number):Observable<any>{
+    return this.http.get(`https://api.themoviedb.org/3/discover/movie?api_key=ec8394f8af9fce4604d5da48e0b3d405&with_genres=${id}`)
   }
 
 }

@@ -8,13 +8,12 @@ import { ApiService } from 'src/app/shared/api.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit{
- 
-  data : Root[] = []
-  nowPlaying : Root[] = []
-  mainMovies :any = []
-  main : any = []
-  nowPlayingShow : any = []
 
+  data : Root[] = []                // storing all the data coming form myData API
+  mainMovies :any = []              // storing movies so that we can use it to slice array
+  main : any = []                   // storing the sliced videos to show in suggestions
+  nowPlayingShow : any = []         // Storing the videos which will be seen after show more click
+  
   constructor(private service : ApiService){}
 
   ngOnInit(): void {
@@ -32,8 +31,5 @@ export class HomeComponent implements OnInit{
     })
   }
 
-  showid(id:any){
-    console.log(id);
-  }
 
 }

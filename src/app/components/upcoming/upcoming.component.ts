@@ -10,11 +10,12 @@ import { ApiService } from 'src/app/shared/api.service';
 export class UpcomingComponent implements OnInit {
 
   upcoming:Root[] = []
-
+  genres : any [] = []
   constructor(private service:ApiService){}
 
   ngOnInit(): void {
     this.upcomingMovies()
+
   }
 
   upcomingMovies(){
@@ -24,4 +25,5 @@ export class UpcomingComponent implements OnInit {
     })
   }
 
+ 
 }

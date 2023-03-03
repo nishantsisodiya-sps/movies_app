@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductionCompany, Root } from 'src/app/model/data';
 import { ApiService } from 'src/app/shared/api.service';
+import { CustomPipe } from 'src/app/custom.pipe';
 
 @Component({
   selector: 'app-details',
@@ -11,12 +12,12 @@ import { ApiService } from 'src/app/shared/api.service';
 
 
 export class DetailsComponent implements OnInit{
-  public url = "https://www.youtube.com/embed/"                      
+       
   mymovies: Root[] = []                            // storing the details of the movies
   production : ProductionCompany[] = []            // storing Production companies
   myVideos: any = []                              // getting all the videos 
   AfterLoadVideos: any = []                      // Storing videos before load more button
-  showmore = true
+  showmore = true                                // Condition for the videos
   constructor(private service : ApiService , private activate: ActivatedRoute){
     
   }
@@ -26,6 +27,8 @@ export class DetailsComponent implements OnInit{
     this.checkIdAndGetData()
   }
   
+  // getting the id of the movie which is been clicked and then showing the details of the movie
+
   checkIdAndGetData(){
     this.activate.paramMap.subscribe(res=>{
        let myId = +res.get(' id')
@@ -37,17 +40,17 @@ export class DetailsComponent implements OnInit{
 
          // Getting Videos
 
-
           this.service.getVideos(myId).subscribe(Response=>{
             this.AfterLoadVideos = Response.results
             this.myVideos = [...Response.results.slice(0,4)]
-          // Getting keys
+            console.log(this.myVideos);
+            
           })
        })
   })
   }
 
- 
+ //Conditions for the video show more and show less button
 
   loadMore(){
     this.showmore = false
