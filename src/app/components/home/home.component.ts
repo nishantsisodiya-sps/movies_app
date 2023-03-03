@@ -27,7 +27,6 @@ export class HomeComponent implements OnInit{
       let arr = this.mainMovies.slice(0,6);
       this.main = arr
       this.nowPlayingShow = this.mainMovies.slice(7)
-      
     })
   }
 

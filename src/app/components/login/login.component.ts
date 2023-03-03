@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup , FormControl , Validators} from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
 import { AppComponent } from 'src/app/app.component';
 import { signUp } from 'src/app/model/userAuth';
 
@@ -19,7 +20,9 @@ export class LoginComponent implements OnInit{
     password: ''
   }
 
-  constructor(private router : Router , private appcomp : AppComponent){}
+  constructor(private router : Router , private appcomp : AppComponent,
+              private toast : NgToastService
+    ){}
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
@@ -45,9 +48,10 @@ export class LoginComponent implements OnInit{
       localStorage.setItem('token' , JSON.stringify('true'))
       this.router.navigate(['/home'])
       this.appcomp.showsidenav = true
+      this.toast.success({detail:"Logged In",summary:"Logged In successfully", duration:3000})
     }
     else{
-      alert("Invalid Credentials")
+      this.toast.error({detail:"No user Found !",summary:"Invalid Credentials", duration:3000})
     }
   }
 
@@ -55,5 +59,6 @@ export class LoginComponent implements OnInit{
     this.signupdata = this.signUp.value
     localStorage.setItem('token' , JSON.stringify('true'))
     this.router.navigate(['/home'])
+    this.toast.success({detail:"Registerd",summary:"Registered successfully", duration:3000})
   }
 }

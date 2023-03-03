@@ -26,6 +26,8 @@ import { InTheaterComponent } from './components/in-theater/in-theater.component
 import {IvyCarouselModule} from 'carousel-angular';
 import { AllMoviesComponent } from './components/all-movies/all-movies.component';
 import { AllShowsComponent } from './components/all-shows/all-shows.component';
+import { NgToastModule } from 'ng-angular-popup';
+
 
 @NgModule({
   declarations: [
@@ -59,6 +61,7 @@ import { AllShowsComponent } from './components/all-shows/all-shows.component';
     MatPaginatorModule,
     NgxPaginationModule,
     IvyCarouselModule,
+    NgToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]

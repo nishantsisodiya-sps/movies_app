@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
 import { Root } from './model/data';
 import { ApiService } from './shared/api.service';
 
@@ -16,7 +17,9 @@ export class AppComponent implements OnInit {
   value: any;
   searchResult: Root[] | undefined
   showMore = false
-  constructor(private router: Router, private service: ApiService) { }
+  constructor(private router: Router, private service: ApiService ,
+              private toast : NgToastService
+    ) { }
 
   ngOnInit(): void {
     this.hidenav()
@@ -35,6 +38,7 @@ export class AppComponent implements OnInit {
     localStorage.removeItem('token')
     this.router.navigate(['/login'])
     this.hidenav()
+    this.toast.success({detail:"Logged out",summary:"Logged Out successfully", duration:3000})
   }
 
   search(val: any) {
