@@ -17,6 +17,7 @@ export class TvShowsComponent implements OnInit{
 
   getShows(){
     this.service2.getTVShows().subscribe(response =>{
+      console.log(response.results);
       this.tvShows.push(response.results)
     })
   }

@@ -36,7 +36,7 @@
 
   <div class="divs2" *ngIf="showmore">
     <div class="divofdiv2" style="max-width: 13em;" *ngFor="let item of myVideos" >
-      <iframe class="frame" src="https://www.youtube.com/embed/z2oJulkQ9Ok | safe">
+      <iframe class="frame" src="https://www.youtube.com/embed/{{item.key}}">
       </iframe>
     </div>
   </div>

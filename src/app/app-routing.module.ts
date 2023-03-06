@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AllMoviesComponent } from './components/all-movies/all-movies.component';
+import { AllShowsComponent } from './components/all-shows/all-shows.component';
 import { DetailsComponent } from './components/details/details.component';
 import { HomeComponent } from './components/home/home.component';
 import { InTheaterComponent } from './components/in-theater/in-theater.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path:'ShowDetails/: id' , component:TvDetailsComponent},
   {path:'theater' , component:InTheaterComponent},
   {path:'AllMovies' , component:AllMoviesComponent},
+  {path:'AllShows' , component:AllShowsComponent},
 
 ];
 

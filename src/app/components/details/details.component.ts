@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductionCompany, Root } from 'src/app/model/data';
 import { ApiService } from 'src/app/shared/api.service';
-import { CustomPipe } from 'src/app/custom.pipe';
+import {DomSanitizer} from '@angular/platform-browser'
 
 @Component({
   selector: 'app-details',
