@@ -29,6 +29,7 @@ a:focus {
     border-radius: 0;
     margin-bottom: 40px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+   
 }
 
 .navbar-btn {
@@ -211,6 +212,8 @@ a.article:hover {
 
 .img-profile{
     height: 36px;
+    position: absolute;
+    right: 1%;
 }
 .small{
     font-size: x-small !important; 
@@ -344,6 +347,9 @@ nav ul li{
 .headBack{
     background-color: black;
     width: 100%;
+    height: 38px;
+    display: flex;
+    align-items: center;
 }
 #paginator{
     width: 100%;
@@ -364,4 +370,8 @@ ul{
 
 ul li{
     cursor: pointer;
+}
+.container-fluid{
+    display: flex;
+    justify-content: center !important;
 }
